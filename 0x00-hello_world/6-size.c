@@ -37,7 +37,7 @@ void print_type(char *aan, char *type)
 	if (!strcmp(type, "long int"))
 		size = sizeof(long int);
 	if (!strcmp(type, "long long"))
-		size = sizeof(long long int);
+		size = sizeof(long long double);
 	if (!strcmp(type, "float"))
 		size = sizeof(float);
 
