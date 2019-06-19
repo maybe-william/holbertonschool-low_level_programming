@@ -1,0 +1,1 @@
+# This is the root folder of the repository for the Holberton School low-level programming track.
