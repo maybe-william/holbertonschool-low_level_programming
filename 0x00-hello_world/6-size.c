@@ -16,7 +16,7 @@ int main(void)
 	print_type("a", "char");
 	print_type("an", "int");
 	print_type("a", "long int");
-	print_type("a", "long long");
+	print_type("a", "long long int");
 	print_type("a", "float");
 	return (0);
 }
@@ -37,7 +37,7 @@ void print_type(char *aan, char *type)
 	if (!strcmp(type, "long int"))
 		size = sizeof(long int);
 	if (!strcmp(type, "long long"))
-		size = sizeof(long long);
+		size = sizeof(long long int);
 	if (!strcmp(type, "float"))
 		size = sizeof(float);
 
