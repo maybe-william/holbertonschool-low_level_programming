@@ -23,7 +23,7 @@ int main(void)
 
 	if (n == 0)
 	{
-		s = "and is zero";
+		s = "and is 0";
 	}
 
 	if (n > 5)
