@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-
-
-
-void print_type(char *aan, char *type);
-
 /**
  * main - Runs the program
  *
@@ -13,35 +8,10 @@ void print_type(char *aan, char *type);
  */
 int main(void)
 {
-	print_type("a", "char");
-	print_type("an", "int");
-	print_type("a", "long int");
-	print_type("a", "long long int");
-	print_type("a", "float");
+	printf("Size of a char: %i byte(s)\n", (int) sizeof(char));
+	printf("Size of an int: %i byte(s)\n", (int) sizeof(int));
+	printf("Size of a long int: %i byte(s)\n", (int) sizeof(long int));
+	printf("Size of a long long int: %i byte(s)\n", (int) sizeof(long long int));
+	printf("Size of a float: %i byte(s)\n", (int) sizeof(float));
 	return (0);
 }
-
-/**
- * print_type - Prints each type using a standard format.
- * @aan: a vs an
- * @type: the type in string representation.
- */
-void print_type(char *aan, char *type)
-{
-	int size;
-
-	if (!strcmp("char", type))
-		size = sizeof(char);
-	if (!strcmp(type, "int"))
-		size = sizeof(int);
-	if (!strcmp(type, "long int"))
-		size = sizeof(long int);
-	if (!strcmp(type, "long long int"))
-		size = sizeof(long long);
-	if (!strcmp(type, "float"))
-		size = sizeof(float);
-
-	printf("Size of %s %s: %d byte(s)\n", aan, type, size);
-}
-
-
