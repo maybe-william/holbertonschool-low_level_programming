@@ -16,22 +16,23 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
-	if (n < 6 && n != 0)
+	x = n % 10;
+
+	if (x < 6 && x != 0)
 	{
 		s = "and is less than 6 and not 0";
 	}
 
-	if (n == 0)
+	if (x == 0)
 	{
 		s = "and is 0";
 	}
 
-	if (n > 5)
+	if (x > 5)
 	{
 		s = "and is greater than 5";
 	}
 
-	x = n % 10;
 
 	printf("Last digit of %i is %i %s\n", n, x, s);
 	return (0);
