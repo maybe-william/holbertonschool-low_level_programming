@@ -26,7 +26,6 @@ void print_times_table(int tab_size)
 				hunds = ' ';
 			if (j != 0)
 			{
-				_putchar(' ');
 				_putchar(hunds);
 				_putchar(tens);
 			}
