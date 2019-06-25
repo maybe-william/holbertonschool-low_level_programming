@@ -24,8 +24,8 @@ void times_table(void)
 
 			if (tens == '0')
 				tens = ' ';
-
-			_putchar(tens);
+			if (j != 0)
+				_putchar(tens);
 			_putchar(ones);
 			if (j != 9)
 			{
@@ -33,7 +33,7 @@ void times_table(void)
 				_putchar(' ');
 			}
 		}
-		_putchar('/n');
+		_putchar(10);
 	}
 
 }
