@@ -18,10 +18,11 @@ int main(void)
 		if (i != 0)
 			printf(", ");
 		if (h1)
-			printf("%lu", h1);
-		if (t1)
-			printf("%lu", t1);
-		printf("%lu", o1);
+			printf("%lu%07lu%07lu", h1, t1, o1);
+		else if (t1)
+			printf("%lu%07lu", t1, o1);
+		else
+			printf("%lu", o1);
 		hs = h1 + h2;
 		ts = t1 + t2;
 		hs = hs + ((ts / 10000000) % 10000000);
