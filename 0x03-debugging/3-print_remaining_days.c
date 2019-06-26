@@ -20,7 +20,7 @@ void print_remaining_days(int month, int day, int year)
 
 	if ((div4 || div400) && (!(div100 && (!div400))))
 	{
-		if (month >= 2 && day >= 60)
+		if (day > 60)
 		{
 			day++;
 		}
