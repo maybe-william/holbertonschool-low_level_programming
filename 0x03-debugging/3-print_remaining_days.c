@@ -18,7 +18,7 @@ void print_remaining_days(int month, int day, int year)
 	div400 = !(year % 400);
 	div100 = !(year % 100);
 
-	if ((div4 || div400) && (!(div100 && (!div400))))
+	if ((div4 || div400 || year == 0) && (!(div100 && (!div400))))
 	{
 		if (month >= 2 && day >= 60)
 		{
