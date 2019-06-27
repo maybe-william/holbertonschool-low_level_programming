@@ -10,7 +10,7 @@
  */
 int mul(int a, int b)
 {
-	long long int a1, b1;
+	long int a1, b1;
 
 	a1 = a;
 	b1 = b;
