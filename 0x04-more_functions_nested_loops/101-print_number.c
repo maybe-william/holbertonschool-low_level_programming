@@ -12,11 +12,7 @@ void print_number(int n)
 	int intermediate, final, ones, tens;
 
 	intermediate = n;
-	if (n < 0)
-	{
-		_putchar('-');
-		intermediate = -n;
-	}
+
 	if (n == 0)
 		_putchar('0');
 
@@ -29,10 +25,14 @@ void print_number(int n)
 		final = (10 * final) + ones;
 	}
 
+	if (final < 0)
+		_putchar('-');
 	while (final != 0)
 	{
 		ones = final % 10;
 		tens = final / 10;
+		if (ones < 0)
+			ones = -ones;
 		_putchar('0' + ones);
 		final = tens;
 	}
