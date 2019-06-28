@@ -1,7 +1,5 @@
 #include "holberton.h"
 #include <math.h>
-#include <limits.h>
-#include <stdio.h>
 
 /**
  * print_number - Checks if an int is and uppercase letter.
@@ -12,20 +10,27 @@
 void print_number(int n)
 {
 	int counter, neg, i;
-	double num, temp;
+	double num, temp, smallify;
 
 	neg = 0;
+	num = (double)n;
 	if (n < 0)
+	{
 		neg = 1;
-
-	num = fabs((double)n);
+		num = -num;
+	}
 	temp = 0;
 	counter = 0;
 	while ((int)num != 0)
 	{
-		temp = (temp * 10) + fmod(num, 10);
+		if ((num - 1000) > 0)
+			smallify = num - 1000;
+		else
+			smallify = num;
+		temp = (temp * 10) + ((int)smallify % 10);
 		counter = counter + 1;
-		num = floor(num / 10);
+		num = (int)(num / 10);
+
 	}
 	if (!counter)
 		_putchar('0');
@@ -34,8 +39,12 @@ void print_number(int n)
 		_putchar('-');
 	for (i = 0; i < counter; i++)
 	{
-		_putchar((int)fmod(temp, 10) + '0');
-		temp = floor(temp / 10);
+		smallify = temp;
+		if (((int)smallify % 10) + '0' != '(')
+			_putchar(((int)smallify % 10) + '0');
+		else
+			_putchar('2');
+		temp = (int)(temp / 10);
 	}
 
 }
