@@ -11,16 +11,16 @@ int _get_first_digit(char *s)
 	int i;
 	int signs;
 
-	signs = 0;
+	signs = 1;
 	i = 0;
 	while (s[i] < '0' || s[i] > '9')
 	{
 		if (s[i] == '\0')
 			return (0);
 		if (s[i] == '-')
-			signs = signs - 1;
+			signs = signs * -1;
 		if (s[i] == '+')
-			signs = signs + 1;
+			signs = signs * 1;
 
 		i = i + 1;
 	}
