@@ -63,7 +63,11 @@ unsigned int _extract_num(char *s)
 int _convert(unsigned int u, int sign)
 {
 	unsigned int temp;
-	int temp2;
+	int temp2, zero;
+
+	zero = !u;
+	if (zero)
+		return ((signed int)u);
 
 	temp = u - 1;
 	temp2 = (signed int)temp;
