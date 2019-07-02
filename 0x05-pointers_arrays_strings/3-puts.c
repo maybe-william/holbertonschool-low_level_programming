@@ -14,6 +14,7 @@ void _puts(char *s)
 	while (s[ind] != '\0')
 	{
 		_putchar(s[ind]);
+		ind = ind + 1;
 	}
 	_putchar('\n');
 }
