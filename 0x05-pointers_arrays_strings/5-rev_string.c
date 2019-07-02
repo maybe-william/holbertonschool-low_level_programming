@@ -17,7 +17,7 @@ void rev_string(char *s)
 	{
 		len = len + 1;
 	}
-	
+
 	halfLen = len / 2;
 	if (len % 2)
 		halfLen = halfLen + 1;
