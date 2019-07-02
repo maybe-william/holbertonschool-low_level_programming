@@ -2,12 +2,12 @@
 
 
 /**
- * print_rev - Prints the reverse of a string.
+ * rev_string - Prints the reverse of a string.
  * @s: The string.
  *
  *
  */
-void print_rev(char *s)
+void rev_string(char *s)
 {
 	int len, i, counter;
 	char swap1, swap2;
