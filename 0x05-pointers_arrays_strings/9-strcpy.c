@@ -6,8 +6,9 @@
  * @d: The first string.
  * @s: The second string.
  *
+ * Return: The destination string pointer.
  */
-void _strcpy(char *d, char *s)
+char *_strcpy(char *d, char *s)
 {
 	int len, i;
 
@@ -22,4 +23,6 @@ void _strcpy(char *d, char *s)
 		d[i] = s[i];
 	}
 	d[i] = '\0';
+
+	return (d);
 }
