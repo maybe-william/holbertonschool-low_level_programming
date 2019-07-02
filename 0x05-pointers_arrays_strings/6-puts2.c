@@ -19,6 +19,7 @@ void puts2(char *s)
 			_putchar(s[ind]);
 		}
 		div2 = (div2 + 1) % 2;
+		ind = ind + 1;
 	}
 	_putchar('\n');
 }
