@@ -12,11 +12,11 @@ char *cap_string(char *s)
 	int i;
 	int sep;
 	char tmp;
-	int p1, p2, p3, p4;
+	int p1, p2, p3, p4, p5;
 
 	sep = 1;
 
-	for (i = 0; s[i] != NULL; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (sep)
 		{
@@ -32,7 +32,8 @@ char *cap_string(char *s)
 		p2 = (tmp == '?' || tmp == '"' || tmp == '(');
 		p3 = (tmp == '!' || tmp == ')' || tmp == '{');
 		p4 = p1 || p2 || p3 || tmp == '}';
-		if (p4)
+		p5 = p4 || tmp == ' ' || tmp == '\t' || tmp == '\n';
+		if (p5)
 		{
 			sep = 1;
 		}

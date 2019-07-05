@@ -18,7 +18,7 @@ char *_strncpy(char *dest, char *src, int n)
 	write = dest;
 	s2 = src;
 
-	for (; *s2 != NULL && count != n; s2++)
+	for (; *s2 != '\0' && count != n; s2++)
 	{
 		*write = *s2;
 		write = write + 1;

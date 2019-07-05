@@ -14,10 +14,10 @@ char *_strcat(char *dest, char *src)
 
 	write = dest;
 	s2 = src;
-	for (; *write != NULL; write++)
+	for (; *write != '\0'; write++)
 	{
 	}
-	for (; *s2 != NULL; s2++)
+	for (; *s2 != '\0'; s2++)
 	{
 		*write = *s2;
 		write = write + 1;

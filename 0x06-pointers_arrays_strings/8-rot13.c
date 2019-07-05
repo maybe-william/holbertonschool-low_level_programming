@@ -10,24 +10,23 @@
 char *rot13(char *s)
 {
 	char *s1;
-	char reg[53];
-	char lt[53];
 	int i;
 
 	s1 = s;
-	reg = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	lt = "nopqrstuvwxyzabcdefghijklmN0PQRSTUVWXYZABCDEFGHIJKLM";
+	char reg[53] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char lt[53] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	while (*s != NULL)
+	while (*s1 != '\0')
 	{
-		for (i = 0; reg[i] != NULL; i++)
+		for (i = 0; reg[i] != '\0'; i++)
 		{
-			if (*s == reg[i])
+			if (*s1 == reg[i])
 			{
-				*s == lt[i];
+				*s1 = lt[i];
+				break;
 			}
 		}
-		s = s + 1;
+		s1 = s1 + 1;
 	}
 	return (s);
 }
