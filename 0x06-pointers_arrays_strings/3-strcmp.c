@@ -16,7 +16,7 @@ int _strcmp(char *s1, char *s2)
 	s11 = s1;
 	s22 = s2;
 
-	while(*s11 == *s22)
+	while (*s11 == *s22)
 	{
 		if (*s11 == '\0')
 			break;
