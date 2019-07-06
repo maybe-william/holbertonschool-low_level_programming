@@ -10,22 +10,22 @@
 char *leet(char *s)
 {
 	char *s1;
-	int i;
+	int i, j;
 
 	s1 = s;
 	char reg[53] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char lt[53] = "4bcd3fghijk1mn0pqrs7uvwxyz4BCD3FGHIJK1MN0PQRS7UVWXYZ";
 
-	while (*s1 != '\0')
+	for (j = 0; s1[j] != '\0'; j++)
 	{
 		for (i = 0; reg[i] != '\0'; i++)
 		{
-			if (*s1 == reg[i])
+			if (s1[j] == reg[i])
 			{
-				*s1 = lt[i];
+				s1[j] = lt[i];
 			}
 		}
-		s1 = s1 + 1;
+		j = j + 1;
 	}
 	return (s);
 }
