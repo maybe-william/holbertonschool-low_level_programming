@@ -11,10 +11,12 @@ char *rot13(char *s)
 {
 	char *s1;
 	int i;
+	char *reg;
+	char *lt;
 
 	s1 = s;
-	char reg[53] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char lt[53] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	reg = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	lt = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	while (*s1 != '\0')
 	{
