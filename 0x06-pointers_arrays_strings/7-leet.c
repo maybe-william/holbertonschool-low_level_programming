@@ -11,11 +11,13 @@ char *leet(char *s)
 {
 	char *s1;
 	int i, j;
+	char *reg;
+	char *lt;
+
+	reg = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	lt = "4bcd3fghijk1mn0pqrs7uvwxyz4BCD3FGHIJK1MN0PQRS7UVWXYZ";
 
 	s1 = s;
-	char *reg = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char *lt = "4bcd3fghijk1mn0pqrs7uvwxyz4BCD3FGHIJK1MN0PQRS7UVWXYZ";
-
 	for (j = 0; s1[j] != '\0'; j++)
 	{
 		for (i = 0; reg[i] != '\0'; i++)
