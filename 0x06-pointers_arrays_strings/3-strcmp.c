@@ -28,11 +28,11 @@ int _strcmp(char *s1, char *s2)
 
 	if (*s11 < *s22)
 	{
-		return (-1);
+		return (*s11 - *s22);
 	}
 	if (*s11 > *s22)
 	{
-		return (1);
+		return (*s11 - *s22);
 	}
 
 	return (0);
