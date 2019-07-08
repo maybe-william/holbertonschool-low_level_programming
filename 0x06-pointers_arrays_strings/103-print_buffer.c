@@ -28,7 +28,10 @@ char getprintchar(char c)
  */
 void printaddr(char *b)
 {
-	printf("%08lx: ", (unsigned long int)b);
+	unsigned int i;
+
+	i = *((unsigned int *)&b);
+	printf("%08x: ", i);
 }
 
 /**
