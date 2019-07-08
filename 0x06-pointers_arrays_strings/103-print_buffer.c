@@ -14,7 +14,7 @@ char getprintchar(char c)
 	unsigned char c1;
 
 	c1 = (unsigned char)c;
-	if (c1 <= 126 && c1 >= 32)
+	if (c1 <= 127 && c1 >= 32)
 		return (c);
 	return ('.');
 }
