@@ -22,15 +22,16 @@ char getprintchar(char c)
 /**
  * printaddr - Prints the address of a buffer.
  * @b: The buffer address
- *
+ * @orig: The orig address
  *
  *
  */
-void printaddr(char *b)
+void printaddr(char *b, char *orig)
 {
-	unsigned int i;
+	unsigned int i, x;
 
-	i = *((unsigned int *)&b);
+	x = b - orig;
+	i = *((unsigned int *)&x);
 	printf("%08x: ", i);
 }
 
@@ -88,7 +89,7 @@ void print_buffer(char *b, int size)
 		{
 			toprint = extra;
 		}
-		printaddr(tmpb);
+		printaddr(tmpb, b);
 		for (i = 0; i < 10; i++)
 		{
 			if (i < toprint)
