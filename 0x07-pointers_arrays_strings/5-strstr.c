@@ -11,6 +11,9 @@ int hasfullstring(char *str, char *sub)
 {
 	int i;
 
+
+	if (sub[0] == '\0')
+		return (0);
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (sub[i] == '\0')
