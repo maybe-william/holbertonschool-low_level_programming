@@ -12,8 +12,6 @@ int hasfullstring(char *str, char *sub)
 	int i;
 
 
-	if (sub[0] == '\0')
-		return (str);
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (sub[i] == '\0')
@@ -45,6 +43,8 @@ char *_strstr(char *haystack, char *needle)
 	char *y;
 	int i;
 
+	if (needle[0] == '\0')
+		return (haystack);
 
 	x = haystack;
 	y = needle;
