@@ -34,5 +34,7 @@ char *_strpbrk(char *s, char *accept)
 		if (match)
 			break;
 	}
+	if (ret == 0)
+		return (i);
 	return (ret);
 }
