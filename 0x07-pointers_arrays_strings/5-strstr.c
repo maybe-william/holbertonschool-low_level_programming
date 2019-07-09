@@ -49,7 +49,7 @@ char *_strstr(char *haystack, char *needle)
 	{
 		if (x[i] == y[0])
 		{
-			if (hasfullstring)
+			if (hasfullstring(&x[i], &y[0]))
 			{
 				return (x + i);
 			}
