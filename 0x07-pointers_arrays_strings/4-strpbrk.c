@@ -14,7 +14,7 @@ char *_strpbrk(char *s, char *accept)
 	char *x;
 	char *y;
 	char *ret;
-	int i, j, match;
+	long int i, j, match;
 
 	x = s;
 	y = accept;
@@ -35,6 +35,6 @@ char *_strpbrk(char *s, char *accept)
 			break;
 	}
 	if (ret == 0)
-		return (i);
+		return ((char *)i);
 	return (ret);
 }
