@@ -14,27 +14,27 @@ char *_strpbrk(char *s, char *accept)
 	char *x;
 	char *y;
 	char *ret;
-	long int i, j, match;
+	long int i, j, hasnull;
 
 	x = s;
 	y = accept;
 	ret = 0;
+	hasnull = 0;
 
 	for (i = 0; x[i] != '\0'; i++)
 	{
-		match = 0;
 		for (j = 0; y[j] != '\0'; j++)
 		{
+			if (y[j] == '\0')
+				hasnull = 1;
 			if (x[i] == y[j])
 			{
 				ret = x + i;
-				break;
+				return (ret);
 			}
 		}
-		if (match)
-			break;
 	}
-	if (ret == 0)
-		return ((char *)i);
+	if (hasnull)
+		return (x + i);
 	return (ret);
 }
