@@ -9,7 +9,7 @@
  *
  * Return: the number of accepted bytes in the string
  */
-char *_strspn(char *s, char *accept)
+unsigned int _strspn(char *s, char *accept)
 {
 	char *x;
 	char *y;
