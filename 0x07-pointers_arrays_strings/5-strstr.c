@@ -13,7 +13,7 @@ int hasfullstring(char *str, char *sub)
 
 
 	if (sub[0] == '\0')
-		return (0);
+		return (str);
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (sub[i] == '\0')
