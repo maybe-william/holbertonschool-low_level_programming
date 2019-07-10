@@ -1,0 +1,1 @@
+# This is the root directory of the project 0x08 for the Holberton School low-level track.
