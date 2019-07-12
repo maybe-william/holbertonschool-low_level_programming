@@ -63,8 +63,10 @@ int main(int argc, char *argv[])
 		}
 		if (coin == 1)
 			coin = 0;
-		if (coin == 5)
+		if (coin == 2)
 			coin = 1;
+		if (coin == 5)
+			coin = 2;
 		if (coin == 10)
 			coin = 5;
 		if (coin == 25)
