@@ -10,17 +10,31 @@
  */
 int getnum(char *str)
 {
-	int num, i;
+	int num, i, onenum, digit, minus, twominus;
 
 	i = 0;
+	onenum = 0;
+	minus = 0;
+	twominus = 0;
+	digit = 0;
 	while (str[i] != '\0')
 	{
-		if (!(str[i] >= (0 + '0') && str[i] <= (0 + '9')))
+		digit = str[i] >= (0 + '0') && str[i] <= (0 + '9');
+		twominus = minus && str[i] == '-';
+		minus = str[i] == '-';
+		if (!digit && !minus)
 		{
 			printf("Error\n");
 			exit(1);
 		}
+		if (digit)
+			onenum = 1;
 		i++;
+	}
+	if (!onenum || twominus)
+	{
+		printf("Error\n");
+		exit(1);
 	}
 
 	num = strtol(str, 0, 10);
