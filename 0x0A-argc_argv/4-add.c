@@ -42,8 +42,8 @@ int main(int argc, char *argv[])
 
 	if (argc < 2)
 	{
-		printf("Error\n");
-		return (1);
+		printf("%i\n", 0);
+		return (0);
 	}
 	sum = 0;
 	for (i = 1; i < argc; i++)
