@@ -10,19 +10,19 @@
  */
 int getnum(char *str)
 {
-	int num, i, onenum, digit, minus, twominus;
+	int num, i, onenum, digit, minus, plus;
 
 	i = 0;
 	onenum = 0;
 	minus = 0;
-	twominus = 0;
+	plus = 0;
 	digit = 0;
 	while (str[i] != '\0')
 	{
 		digit = str[i] >= (0 + '0') && str[i] <= (0 + '9');
-		twominus = minus && str[i] == '-';
-		minus = str[i] == '-';
-		if (!digit && !minus)
+		plus = !i && str[i] == '+';
+		minus = !i && str[i] == '-';
+		if (!digit && !minus && !plus)
 		{
 			printf("Error\n");
 			exit(1);
@@ -31,7 +31,7 @@ int getnum(char *str)
 			onenum = 1;
 		i++;
 	}
-	if (!onenum || twominus)
+	if (!onenum)
 	{
 		printf("Error\n");
 		exit(1);
