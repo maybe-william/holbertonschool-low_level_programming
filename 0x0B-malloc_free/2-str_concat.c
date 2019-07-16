@@ -18,17 +18,22 @@ char *str_concat(char *s1, char *s2)
 	int i, size1, size2;
 
 	size1 = 0;
-	while (s1[size1] != '\0')
+	if (s1)
 	{
-		size1++;
+		while (s1[size1] != '\0')
+		{
+			size1++;
+		}
 	}
 
 	size2 = 0;
-	while (s2[size2] != '\0')
+	if (s2)
 	{
-		size2++;
+		while (s2[size2] != '\0')
+		{
+			size2++;
+		}
 	}
-
 	ret = (char *)malloc((size1 + size2 + 1) * sizeof(*s1));
 	if (!ret)
 		return (ret);
