@@ -13,7 +13,7 @@ int totallength(int ac, char **av)
 	int size, i, j;
 
 	size = 0;
-	for (i = 0; i < (ac - 1); i++)
+	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
@@ -38,7 +38,7 @@ int totallength(int ac, char **av)
  */
 char *argstostr(int ac, char **av)
 {
-	int i, j, size, extra;
+	int i, j, size, k;
 	char *ret;
 
 	if (ac == 0 || av == 0)
@@ -49,15 +49,16 @@ char *argstostr(int ac, char **av)
 	if (ret == 0)
 		return (0);
 
-	extra = 0;
-	for (i = 0; i < (ac - 1); i++)
+	k = 0;
+	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			ret[i + j + extra] = av[i][j];
+			ret[k] = av[i][j];
+			k = k + 1;
 		}
-		ret[i + j + extra] = '\n';
-		extra = extra + 1;
+		ret[k] = '\n';
+		k = k + 1;
 	}
 	return (ret);
 }
