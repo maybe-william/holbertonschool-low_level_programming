@@ -21,13 +21,13 @@ int **alloc_grid(int width, int height)
 	if (width <= 0 || height <= 0)
 		return (0);
 
-	ret = (int **)malloc(height * sizeof(currentPointer));
+	ret = (int **)malloc(height * sizeof(int *));
 	if (ret == 0)
 		return (0);
 
 	for (i = 0; i < height; i++)
 	{
-		currentPointer = (int *)malloc(width * sizeof(*currentPointer));
+		currentPointer = (int *)malloc(width * sizeof(int));
 		if (currentPointer == 0)
 			return (0);
 		ret[i] = currentPointer;
