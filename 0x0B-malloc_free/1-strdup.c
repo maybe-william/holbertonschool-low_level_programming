@@ -29,7 +29,7 @@ char *_strdup(char *str)
 	}
 
 	ret = (char *)malloc((size + 1) * sizeof(*str));
-	if (!ret)
+	if (ret == 0)
 		return (ret);
 
 	for (i = 0; i < size; i++)
