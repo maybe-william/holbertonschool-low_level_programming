@@ -35,8 +35,8 @@ char *str_concat(char *s1, char *s2)
 		}
 	}
 	ret = (char *)malloc((size1 + size2 + 1) * sizeof(char));
-	if (ret == 0)
-		return (0);
+	if (ret == NULL)
+		return (NULL);
 
 	for (i = 0; i < size1; i++)
 		ret[i] = s1[i];
