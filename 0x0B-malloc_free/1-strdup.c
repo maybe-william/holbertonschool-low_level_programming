@@ -17,11 +17,6 @@ char *_strdup(char *str)
 	char *ret;
 	int i, size;
 
-	if (*str == '\0')
-	{
-		return (0);
-	}
-
 	size = 0;
 	while (str[size] != '\0')
 	{
@@ -30,7 +25,7 @@ char *_strdup(char *str)
 
 	ret = (char *)malloc((size + 1) * sizeof(*str));
 	if (ret == 0)
-		return (ret);
+		return (0);
 
 	for (i = 0; i < size; i++)
 	{
