@@ -61,11 +61,14 @@ int getlennext(char *arr)
  */
 char *skipspace(char *ptr)
 {
-	while (*ptr == ' ')
+	char *myptr;
+
+	myptr = ptr;
+	while (*myptr == ' ')
 	{
-		ptr = ptr + 1;
+		myptr = myptr + 1;
 	}
-	return (ptr);
+	return (myptr);
 }
 
 /**
@@ -80,9 +83,13 @@ char **strtow(char *str)
 	char **ret;
 	char *current;
 	char *strptr;
+	char *tmpptr;
 	int wordnum, lettnum, i, j;
 
 	if (str == NULL || (str[0] == '\0'))
+		return (NULL);
+	tmpptr = skipspace(str);
+	if (*tmpptr == '\0' || (tmpptr[0] == ' ' && tmpptr[1] == '\0'))
 		return (NULL);
 	strptr = str;
 	wordnum = getstrnum(str);
