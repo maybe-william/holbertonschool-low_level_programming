@@ -40,9 +40,11 @@ void printnum(char *number)
 		if (getinum(number, len) != '0' || nonzero)
 		{
 			nonzero = 1;
-			_putchar(getinum(number, len));
+			putchar(getinum(number, len));
 		}
 	}
+	if (!nonzero)
+		putchar('0');
 }
 
 /**
@@ -100,6 +102,24 @@ int multdigs(char d1, char d2)
 }
 
 /**
+ * alldigs - check to make sure a string is all digits
+ * @str: the string
+ *
+ * Return: 1 or 0
+ */
+int alldigs(char *str)
+{
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+	}
+	return (1);
+}
+
+/**
  * main - run the full program
  * @argc: the number of command line arguments
  * @argv: the command line arguments
@@ -113,8 +133,14 @@ int main(int __attribute__((unused)) argc, char *argv[])
 	char *sum;
 	int i, j, tmpnum, len1, len2, size;
 
+	if (argc != 3 || !alldigs(argv[1]) || !alldigs(argv[2]))
+	{
+		printf("Error\n");
+		exit(98);
+	}
 	num1 = argv[1];
 	num2 = argv[2];
+
 	for (len1 = 0; num1[len1] != '\0'; len1++)
 	{
 	}
@@ -134,7 +160,7 @@ int main(int __attribute__((unused)) argc, char *argv[])
 		}
 	}
 	printnum(sum);
-	_putchar('\n');
+	putchar('\n');
 	free(sum);
 	return (0);
 }
