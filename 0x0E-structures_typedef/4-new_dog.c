@@ -41,7 +41,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	for (i = 0; i <= sizen; i++)
 		(d->name)[i] = n[i];
 	for (j = 0; j <= sizeo; j++)
-		(d->owner)[i] = o[i];
+		(d->owner)[j] = o[j];
 	if (!name)
 		free(d->name);
 		d->name = (!name) ? NULL : d->name;
