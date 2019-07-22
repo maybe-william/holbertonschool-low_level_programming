@@ -15,7 +15,7 @@ void free_dog(dog_t *d)
 		d->age = 0;
 		free(d);
 	}
-	if (n != NULL)
+	if (n != NULL && o != n)
 		free(n);
 	if (o != NULL)
 		free(o);
