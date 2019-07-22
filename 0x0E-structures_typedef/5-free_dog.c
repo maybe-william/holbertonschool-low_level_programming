@@ -11,9 +11,12 @@ void free_dog(dog_t *d)
 	char *o = d->owner;
 
 	if (d)
+	{
+		d->age = 0;
 		free(d);
-	if (n != NULL && n[0] != '\0')
+	}
+	if (n != NULL)
 		free(n);
-	if (o != NULL && o[0] != '\0')
+	if (o != NULL)
 		free(o);
 }
