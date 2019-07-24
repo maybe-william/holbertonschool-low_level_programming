@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(98);
 	}
 	arg1 = argc;
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	temp = get_op_func((argv[2]));
 	if (!temp)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(99);
 	}
 	printf("%i\n", temp(arg1, arg2));
