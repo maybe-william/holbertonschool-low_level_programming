@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "function_pointers.h"
 
 /**
  * array_iterator - do something to each thing in an array
