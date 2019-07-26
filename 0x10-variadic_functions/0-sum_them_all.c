@@ -4,9 +4,9 @@ i != stop; \
 ((start < stop) ? (i++) : (i--)))
 
 /**
- * sum_them_all - function description
- * @n: parameter description
- * Return: return description
+ * sum_them_all - sum all ints variadically
+ * @n: the number of ints to sum
+ * Return: the sum
  */
 int sum_them_all(const unsigned int n, ...)
 {
