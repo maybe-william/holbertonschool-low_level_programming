@@ -13,8 +13,7 @@ void print_all(const char * const format, ...)
 	va_list vl;
 
 	va_start(vl, format);
-	regchar = 1;
-	while (format[i] != '\0')
+	while (format && format[i] != '\0')
 	{
 		if (i != 0 && !regchar)
 			printf(", ");
