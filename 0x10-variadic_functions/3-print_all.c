@@ -8,14 +8,16 @@
  */
 void print_all(const char * const format, ...)
 {
-	unsigned int i;
+	unsigned int regchar, i = 0;
 	char *temp;
 	va_list vl;
 
 	va_start(vl, format);
-	i = 0;
+	regchar = 1;
 	while (format[i] != '\0')
 	{
+		if (i != 0 && !regchar)
+			printf(", ");
 		switch (format[i])
 		{
 		case 's':
@@ -37,13 +39,11 @@ void print_all(const char * const format, ...)
 			printf("%f", va_arg(vl, double));
 			break;
 		default:
+			regchar = 1;
 			i++;
 			continue;
 		}
-		if (format[i + 1] != '\0')
-		{
-			printf(", ");
-		}
+		regchar = 0;
 		i++;
 	}
 	va_end(vl);
