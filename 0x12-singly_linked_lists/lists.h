@@ -1,5 +1,6 @@
 #ifndef HOLBERTON_H_
 #define HOLBERTON_H_
+#include <stddef.h>
 
 /**
  * struct list_s - singly linked list
@@ -30,22 +31,33 @@ list_t *add_node_end(list_t **head, const char *str);
 void free_list(list_t *head);
 
 /**
+ * do_nothing - does nothing
+ * @x: a linked list
+ */
+void do_nothing(list_t *x)
+{
+	(void)x;
+}
+
+/**
  * list_map - map an operation over a list
  * @head: the head of the list
  * @f: the operation to do
- *
  */
-void list_map(list_t *head, void (*f)(list_t *))
+size_t list_map(list_t *head, void (*f)(list_t *))
 {
 	list_t *h2 = head;
 	list_t *tmp;
+	size_t num = 0;
 
 	while (h2 != NULL)
 	{
 		tmp = h2->next;
 		f(h2);
 		h2 = tmp;
+		num++;
 	}
+	return (num);
 }
 
 #endif
