@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "lists.h"
 
 /**
  * print_node - print the str in a single node
@@ -8,7 +8,12 @@
  */
 void print_node(list_t *n)
 {
-	printf(n->str);
+	if (!(n->str))
+		printf("[0] (nil)\n");
+	else
+	{
+		printf("[%i] %s\n", n->len, n->str);
+	}
 }
 
 /**
@@ -18,5 +23,8 @@ void print_node(list_t *n)
  */
 size_t print_list(const list_t *h)
 {
-	list_map(h, print_node);
+	size_t num = 0;
+
+	num = list_map(h, print_node);
+	return (num);
 }
