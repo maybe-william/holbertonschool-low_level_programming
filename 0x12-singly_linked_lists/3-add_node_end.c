@@ -35,6 +35,22 @@ size_t list_map3(list_t *head, void (*f)(list_t *))
 
 
 /**
+ * strlen2 - get the strlen
+ * @x: the str
+ * Return: the length
+ */
+int strlen2(char *x)
+{
+	int count = 0;
+
+	while (x[count])
+		count++;
+
+	return (count);
+}
+
+
+/**
  * add_node_end - function description
  * @head: parameter description
  * @str: parameter description
@@ -60,7 +76,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		x->str = NULL;
 	} else
 	{
-		len = strlen(str);
+		len = strlen2(str);
 		x->str = strdup(str);
 		if (!(x->str))
 		{

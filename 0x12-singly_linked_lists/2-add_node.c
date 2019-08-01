@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <string.h>
 
 /**
  * do_nothing2 - does nothing
@@ -34,6 +33,20 @@ size_t list_map2(list_t *head, void (*f)(list_t *))
 	return (num);
 }
 
+/**
+ * strlen1 - get the strlen
+ * @x: the str
+ * Return: the length
+ */
+int strlen1(char *x)
+{
+	int count = 0;
+
+	while (x[count])
+		count++;
+
+	return (count);
+}
 
 /**
  * add_node - function description
@@ -55,7 +68,7 @@ list_t *add_node(list_t **head, const char *str)
 		x->str = NULL;
 	} else
 	{
-		len = strlen(str);
+		len = strlen1(str);
 		x->str = strdup(str);
 		if (!(x->str))
 		{
