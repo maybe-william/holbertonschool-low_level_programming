@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "lists.h"
 
 /**
  * add_node_end - function description
@@ -12,21 +12,35 @@ list_t *add_node_end(list_t **head, const char *str)
 	int len;
 	list_t *y = *head;
 
+	if (!y)
+		return ((void *)0);
+
 	while (y->next != NULL)
 	{
-		;
+		y = y->next;
 	}
 
-
-
-
-	len = strlen(str);
-
 	x = malloc(sizeof(list_t));
-	x->str = malloc(len);
-	strdup(x->str, str);
-	x->len = len;
+	if (!x)
+		return ((void *)0);
+	if (!str)
+	{
+		x->len = 0;
+		x->str = NULL;
+	} else
+	{
+		len = strlen(str);
+		x->str = strdup(str);
+		if (!(x->str))
+		{
+			free(x);
+			return ((void *) 0);
+		}
+		x->len = len;
+	}
+
 	x->next = NULL;
+
 	y->next = x;
 
 	return (*head);
