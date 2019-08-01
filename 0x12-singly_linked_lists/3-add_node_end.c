@@ -76,7 +76,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		x->str = NULL;
 	} else
 	{
-		len = strlen2(str);
+		len = strlen2((char *)str);
 		x->str = strdup(str);
 		if (!(x->str))
 		{
