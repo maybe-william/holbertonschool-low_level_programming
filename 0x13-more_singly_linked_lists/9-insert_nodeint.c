@@ -26,6 +26,10 @@ ll *lm9(ll *l, int q, int n, void (*f)(ll *, ll *, ll *, int, int, int, ll **))
 		i++;
 		curr = temp;
 	}
+	if (q == i)
+	{
+		f(prev, curr, next, i, q, n, &res);
+	}
 	return (res);
 }
 
