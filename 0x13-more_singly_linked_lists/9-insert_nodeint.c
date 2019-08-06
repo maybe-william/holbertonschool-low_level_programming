@@ -17,7 +17,7 @@ ll *lm9(ll *l, int q, int n, void (*f)(ll *, ll *, ll *, int, int, int, ll **))
 	ll *temp = (void *)0;
 	ll *curr = l;
 
-	while (curr != NULL)
+	while (curr != (void *)0)
 	{
 		temp = curr->next;
 		next = temp;
@@ -65,7 +65,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	ll *x;
 
-	if (n == 0)
+	if (!head)
+		return ((void *)0);
+	if (!(*head) && idx != 0)
+		return ((void *)0);
+	if (idx == 0)
 	{
 		x = malloc(sizeof(ll));
 		if (x)
