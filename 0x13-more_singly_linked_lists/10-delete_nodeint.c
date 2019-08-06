@@ -7,9 +7,9 @@
  * @f: the function to do at every node.
  * Return: the resultant node
  */
-ll *lm10(ll *l, int q, void (*f)(ll *, ll *, ll *, int, int, ll **))
+ll *lm10(ll *l, unsigned int q, void (*f)(ll *, ll *, ll *, int, int, ll **))
 {
-	int i = 0;
+	unsigned int i = 0;
 	ll *res = l;
 	ll *prev = (void *)0;
 	ll *next = (void *)0;
@@ -25,6 +25,8 @@ ll *lm10(ll *l, int q, void (*f)(ll *, ll *, ll *, int, int, ll **))
 		i++;
 		curr = temp;
 	}
+	if (q >= i)
+		return ((ll *)1);
 	return (res);
 }
 
@@ -62,11 +64,16 @@ void delnode(ll *p, ll *c, ll *n, int i, int q, ll **out)
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
+	ll *temp;
 	if (!head)
 		return (-1);
 	if (!(*head))
 		return (-1);
 
-	*head = lm10(*head, index, delnode);
+	temp = lm10(*head, index, delnode);
+	if (temp == (ll *)1)
+		return(-1);
+
+	*head = temp;
 	return (1);
 }
