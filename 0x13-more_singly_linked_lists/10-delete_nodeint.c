@@ -65,6 +65,7 @@ void delnode(ll *p, ll *c, ll *n, int i, int q, ll **out)
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	ll *temp;
+
 	if (!head)
 		return (-1);
 	if (!(*head))
@@ -72,7 +73,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	temp = lm10(*head, index, delnode);
 	if (temp == (ll *)1)
-		return(-1);
+		return (-1);
 
 	*head = temp;
 	return (1);
