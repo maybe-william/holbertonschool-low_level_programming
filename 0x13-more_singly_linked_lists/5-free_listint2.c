@@ -47,6 +47,8 @@ void freenode5(ll *p, ll *c, ll *n, int i)
  */
 void free_listint2(listint_t **head)
 {
+	if (!head)
+		return;
 	if (*head)
 	{
 		lm5(*head, freenode5);
