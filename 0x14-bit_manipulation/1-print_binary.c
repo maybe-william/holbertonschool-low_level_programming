@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 
 /**
@@ -14,7 +15,7 @@ void print_bin_rec(unsigned long int n)
 	print_bin_rec(n >> 1);
 
 	if ((n >> 1))
-		_putchar(((n >> 1) & 1) + '0');
+		putchar(((n >> 1) & 1) + '0');
 
 
 }
@@ -24,8 +25,6 @@ void print_bin_rec(unsigned long int n)
  */
 void print_binary(unsigned long int n)
 {
-	if (!n)
-		_putchar('0');
-	else
-		print_bin_rec(n);
+	print_bin_rec(n);
+	putchar((n & 1) + '0');
 }
