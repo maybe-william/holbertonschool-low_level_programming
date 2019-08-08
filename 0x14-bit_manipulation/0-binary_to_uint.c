@@ -1,16 +1,20 @@
 #include "holberton.h"
-
+#include <stdio.h>
 
 /**
  * binary_rec - recursively get a binary number.
  * @b: the number to convert to base 10
+ * @acc: the hitherto accumulated value
  * Return: the number in base 10
  */
-unsigned int binary_rec(const char *b)
+unsigned int binary_rec(const char *b, unsigned int acc)
 {
+	unsigned int x;
+
 	if (b[0] == '\0')
-		return (0);
-	return ((binary_rec(b + 1) * 2) + (b[0] - '0'));
+		return (acc);
+	x = binary_rec(b + 1, ((acc * 2) + (b[0] - '0')));
+	return (x);
 }
 
 
@@ -31,5 +35,5 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 		i++;
 	}
-	return (binary_rec(b));
+	return (binary_rec(b, 0));
 }
