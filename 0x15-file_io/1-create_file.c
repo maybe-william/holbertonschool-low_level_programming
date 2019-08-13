@@ -1,5 +1,7 @@
 #include "holberton.h"
-
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
 /**
  * create_file - function description
  * @filename: parameter description
