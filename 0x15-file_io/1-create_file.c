@@ -13,7 +13,7 @@ int create_file(const char *filename, char *text_content)
 	int desc, textsize;
 	ssize_t wstat;
 
-	if (!filename || !text_content)
+	if (!filename)
 		return (-1);
 
 	/*first call is to create file only if non-existent*/
@@ -22,10 +22,10 @@ int create_file(const char *filename, char *text_content)
 		desc = open(filename, O_RDWR | O_TRUNC);
 	if (desc < 0)
 		return (-1);
-	if (text_content[0] == '\0')
+	if (!text_content || text_content[0] == '\0')
 	{
 		close(desc);
-		return (-1);
+		return (1);
 	}
 
 	for (textsize = 0; text_content[textsize]; textsize++)
