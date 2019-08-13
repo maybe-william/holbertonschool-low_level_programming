@@ -22,14 +22,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	stuff = malloc(letters);
 	if (!stuff)
+	{
+		close(desc);
 		return (0);
+	}
 	ret = read(desc, stuff, letters);
+	close(desc);
 	if (ret == 0 || ret == -1)
 	{
 		free(stuff);
 		return (0);
 	}
-
 	wstat = write(STDOUT_FILENO, stuff, ret);
 	free(stuff);
 	if (wstat != ret)
