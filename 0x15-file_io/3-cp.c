@@ -5,16 +5,16 @@
 #include <stdlib.h>
 
 #define ARGERR 97
-#define ARGMESS "Usage: cp file_from file_to"
+#define ARGMESS "Usage: cp file_from file_to\n"
 
 #define RERR 98
-#define RMESS "Error: Can\'t read from file %s"
+#define RMESS "Error: Can\'t read from file %s\n"
 
 #define WERR 99
-#define WMESS "Error: Can\'t write to %s"
+#define WMESS "Error: Can\'t write to %s\n"
 
 #define CLERR 100
-#define CLMESS "Error: Can\'t close fd %i"
+#define CLMESS "Error: Can\'t close fd %i\n"
 
 /**
  * errexit - exit with an error
