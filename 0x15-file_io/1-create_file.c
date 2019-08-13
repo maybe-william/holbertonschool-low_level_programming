@@ -3,10 +3,10 @@
 #include <unistd.h>
 #include <stdlib.h>
 /**
- * create_file - function description
- * @filename: parameter description
- * @text_content: parameter description
- * Return: return description
+ * create_file - create a file and write to it
+ * @filename: the filename to create
+ * @text_content: the text to write to it
+ * Return: 1 on success, -1 on failure
  */
 int create_file(const char *filename, char *text_content)
 {
