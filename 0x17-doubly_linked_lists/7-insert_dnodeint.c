@@ -1,5 +1,8 @@
 #include "lists.h"
 
+void configNode(dlistint_t *prev, dlistint_t *curr, dlistint_t *next, int n);
+
+
 /**
  * insert_dnodeint_at_index - insert a node at given index
  * @h: list
@@ -28,7 +31,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			return (new);
 		}
 		else
-		}
+		{
 			free(new);
 			return (NULL);
 		}
