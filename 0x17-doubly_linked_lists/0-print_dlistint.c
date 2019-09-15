@@ -7,7 +7,7 @@
  */
 size_t print_dlistint(const dlistint_t *h)
 {
-	dlistint_t *head = h;
+	dlistint_t *head = (dlistint_t *)h;
 	size_t count = 0;
 
 	/* if null, return */

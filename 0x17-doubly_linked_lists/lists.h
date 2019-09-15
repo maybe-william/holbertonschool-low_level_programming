@@ -1,6 +1,7 @@
 #ifndef _HOLBERTON_H_
 #define _HOLBERTON_H_
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * struct dlistint_s - doubly linked list
