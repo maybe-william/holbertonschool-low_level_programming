@@ -7,7 +7,7 @@
  */
 size_t dlistint_len(const dlistint_t *h)
 {
-	dlistint_t *head = h;
+	dlistint_t *head = (dlistint_t *)h;
 	size_t count = 0;
 
 	/* if the head is null, return 0 */
@@ -22,5 +22,5 @@ size_t dlistint_len(const dlistint_t *h)
 		count++;
 	}
 
-	return (count + 1)
+	return (count + 1);
 }
