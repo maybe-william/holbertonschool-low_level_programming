@@ -38,7 +38,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	ind = key_index((const unsigned char *)key, ht->size);
 
-	x = check_key(current, (char *)key);
+	x = check_key_get(ht->array[ind], (char *)key);
 	if (!x)
 	{
 		return (NULL);
