@@ -35,9 +35,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *v = NULL;
 	char *k = NULL;
 
-	if (!ht || ht->size == 0)
-		return (0);
-	if (!key || key[0] == '\0' || !value)
+	if (!ht || ht->size == 0 || !key || key[0] == '\0' || !value)
 		return (0);
 	ind = key_index((const unsigned char *)key, ht->size);
 	current = (ht->array)[ind];
@@ -66,6 +64,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		x->next = current;
 		(ht->array)[ind] = x;
 	}
+	else
+		free(x->value);
 	x->value = v;
 	return (1);
 }
