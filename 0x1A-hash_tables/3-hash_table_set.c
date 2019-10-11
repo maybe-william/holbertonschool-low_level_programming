@@ -33,23 +33,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *x = NULL;
 	hash_node_t *current = NULL;
 	char *v = NULL;
+	char *k = NULL;
 
 	if (!ht || ht->size == 0)
 		return (0);
-	if (!key || key[0] == '\0')
+	if (!key || key[0] == '\0' || !value)
 		return (0);
-	if (!value)
-		return (0);
-
 	ind = key_index((const unsigned char *)key, ht->size);
 	current = (ht->array)[ind];
-
 	v = malloc(strlen(value) + 1);
 	if (!v)
 		return (0);
 	strcpy(v, value);
-
-
 	x = check_key(current, (char *)key);
 	if (!x)
 	{
@@ -59,11 +54,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			free(v);
 			return (0);
 		}
-		x->key = (char *)key;
+		k = malloc(strlen(key) + 1);
+		if (!k)
+		{
+			free(v);
+			free(x);
+			return (0);
+		}
+		strcpy(k, key);
+		x->key = k;
 		x->next = current;
 		(ht->array)[ind] = x;
 	}
 	x->value = v;
-
 	return (1);
 }
