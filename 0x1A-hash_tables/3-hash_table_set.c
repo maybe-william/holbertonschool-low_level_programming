@@ -34,7 +34,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *current = NULL;
 	char *v = NULL;
 
-	if (!ht)
+	if (!ht || ht->size == 0)
 		return (0);
 	if (!key || key[0] == '\0')
 		return (0);
@@ -59,10 +59,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			free(v);
 			return (0);
 		}
+		x->key = (char *)key;
 		x->next = current;
 		(ht->array)[ind] = x;
 	}
-	x->key = (char *)key;
 	x->value = v;
 
 	return (1);
