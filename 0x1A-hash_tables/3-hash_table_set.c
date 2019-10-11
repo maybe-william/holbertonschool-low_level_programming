@@ -1,5 +1,24 @@
 #include "hash_tables.h"
 #include <stdlib.h>
+#include <string.h>
+
+/**
+ * check_key - check if a key exists in a linked list
+ * @ll: the linked list
+ * @key: the key
+ * Return: NULL if not found, otherwise the node
+ */
+hash_node_t *check_key(hash_node_t *ll, char *key)
+{
+	while (ll)
+	{
+		if (strcmp(key, ll->key) == 0)
+			return (ll);
+		ll = ll->next;
+	}
+	return (NULL);
+}
+
 
 /**
  * hash_table_set - add a k,v pair to a hash table
@@ -13,23 +32,38 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int ind = 0;
 	hash_node_t *x = NULL;
 	hash_node_t *current = NULL;
+	char *v = NULL;
 
 	if (!ht)
 		return (0);
-	if (!key)
+	if (!key || key[0] == '\0')
 		return (0);
-
-	x = malloc(sizeof(hash_node_t));
-	if (!x)
+	if (!value)
 		return (0);
 
 	ind = key_index((const unsigned char *)key, ht->size);
 	current = (ht->array)[ind];
 
-	x->key = (char *)key;
-	x->value = (char *)value;
-	x->next = current;
+	v = malloc(strlen(value) + 1);
+	if (!v)
+		return (0);
+	strcpy(v, value);
 
-	(ht->array)[ind] = x;
+
+	x = check_key(current, (char *)key);
+	if (!x)
+	{
+		x = malloc(sizeof(hash_node_t));
+		if (!x)
+		{
+			free(v);
+			return (0);
+		}
+		x->next = current;
+		(ht->array)[ind] = x;
+	}
+	x->key = (char *)key;
+	x->value = v;
+
 	return (1);
 }
