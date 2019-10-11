@@ -26,7 +26,7 @@ hash_node_t *check_key_get(hash_node_t *ll, char *key)
  * @key: the key
  * Return: value if succeeded, NULL otherwise
  */
-char *hash_table_get(hash_table_t *ht, const char *key)
+char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int ind = 0;
 	hash_node_t *x = NULL;
