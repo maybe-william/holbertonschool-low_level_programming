@@ -49,7 +49,7 @@ void shell_sort(int *array, size_t size)
 	unsigned int sublen = 0, i = 0, subsorted = 0, c = 0, next = 0, n = 0;
 	int temp = 0;
 
-	if (size < 2)
+	if (size < 2 || array == NULL)
 		return;
 
 	for (n = get_window_size(size); n >= 1; n--)
