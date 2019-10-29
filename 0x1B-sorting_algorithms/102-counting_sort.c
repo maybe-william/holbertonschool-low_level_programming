@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "sort.h"
 
 /**
  * counting_sort - function description

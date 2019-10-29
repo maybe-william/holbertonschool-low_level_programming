@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "sort.h"
 
 /**
  * merge_sort - function description
@@ -7,5 +7,5 @@
  */
 void merge_sort(int *array, size_t size)
 {
-
+	
 }
