@@ -33,7 +33,7 @@ unsigned int get_window_size(unsigned int size)
 	while (win_size <= (size / 2))
 	{
 		i++;
-		win_size = get_knuth_n(i + 1, 1);
+		win_size = get_knuth_n(i, 1);
 	}
 
 	return (i);
