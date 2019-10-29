@@ -24,7 +24,7 @@ unsigned int get_knuth_n(unsigned int n, unsigned int acc)
  */
 unsigned int get_window_size(unsigned int size)
 {
-	unsigned int i = 1, win_size = 0;
+	unsigned int i = 0, win_size = 0;
 
 	if (size % 2 != 0)
 	{
@@ -33,7 +33,7 @@ unsigned int get_window_size(unsigned int size)
 	while (win_size <= (size / 2))
 	{
 		i++;
-		win_size = get_knuth_n(i, 1);
+		win_size = get_knuth_n(i + 1, 1);
 	}
 
 	return (i);
