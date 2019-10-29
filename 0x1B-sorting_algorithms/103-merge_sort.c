@@ -101,6 +101,8 @@ void merge_sort(int *array, size_t size)
 {
 	int *buff = NULL;
 
+	if (size < 2)
+		return;
 	buff = malloc(size * sizeof(int));
 	if (buff == NULL)
 		return;
