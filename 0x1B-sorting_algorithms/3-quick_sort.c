@@ -68,7 +68,7 @@ void quick_sort(int *array, size_t size)
 {
 	int end = (int)size;
 
-	if (!array || size <= 2)
+	if (!array || size < 2)
 		return;
 	end--;
 	recur_sort(array, 0, end, size);
