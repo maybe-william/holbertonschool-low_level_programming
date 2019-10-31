@@ -92,6 +92,9 @@ void sort_deck(deck_node_t **deck)
 	deck_node_t *temp = NULL;
 	int i = 0;
 
+	if (!deck || !(*deck) || !((*deck)->next))
+		return;
+
 	temp = *deck;
 	while (temp)
 	{
