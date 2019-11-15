@@ -59,10 +59,6 @@ def island_perimeter(grid):
     while current != first or direction != 0:
         if direction is None:
             direction = 0
-        print(first)
-        print(current)
-        print(direction)
-        print(count)
         side = get(current, direction)
         if side[0] >= xsize or side[0] < 0 or side[1] >= ysize or side[1] < 0:
             sideval = 0
