@@ -4,4 +4,4 @@ CC = gcc
 SRC = $(wildcard *.c)
 
 holberton: ${SRC} m.h
-	${CC} holberton.c main.c -o holberton
+	${CC} ${SRC} -o holberton
