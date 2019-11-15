@@ -6,7 +6,7 @@ OBJ = $(SRC:%.c=%.o)
 NAME = holberton
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
-all: $(call OBJ)
+all: $(call OBJ) m.h
 	$(call CC) $(call OBJ) -o $(call NAME)
        
 clean:
