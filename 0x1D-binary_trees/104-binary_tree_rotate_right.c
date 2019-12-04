@@ -5,7 +5,7 @@
  * @root: the current root node
  * Return: the pointer to the new root node
  */
-btt *binary_tree_rotate_left(btt *root)
+btt *binary_tree_rotate_right(btt *root)
 {
 	btt *r = root;
 	btt *l;
