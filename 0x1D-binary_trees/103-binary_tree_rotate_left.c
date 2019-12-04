@@ -1,12 +1,32 @@
 #include "binary_trees.h"
 
 /**
- * avl_remove - function description
- * @root: parameter description
- * @value: parameter description
- * Return: return description
+ * binary_tree_rotate_left - rotate a root node left
+ * @root: the current root node
+ * Return: the pointer to the new root node
  */
-avl_t *avl_remove(avl_t *root, int value)
+btt *binary_tree_rotate_left(btt *root)
 {
+	btt *l = root;
+	btt *r;
+	btt *mid;
 
+	if (root == NULL || root->right == NULL)
+		return (NULL);
+
+	r = l->right;
+	mid = l->right->left;
+
+	r->left = l;
+	r->parent = l->parent;
+
+	l->right = mid;
+	l->parent = r;
+
+	if (mid != NULL)
+	{
+		mid->parent = l;
+	}
+
+	return (r);
 }
