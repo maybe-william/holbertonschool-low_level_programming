@@ -1,46 +1,31 @@
 #include "binary_trees.h"
 
-size_t h_helper(const binary_tree_t *tree, size_t acc);
+size_t s_helper(const binary_tree_t *tree);
 
 /**
- * binary_tree_height - find the height of a node
+ * binary_tree_size - find the size of a tree
  * @tree: the tree
- * Return: the height
+ * Return: the size
  */
-size_t binary_tree_height(const binary_tree_t *tree)
+size_t binary_tree_size(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (0);
-	return (h_helper(tree, 0) - 1);
+	return (s_helper(tree));
 }
 
 /**
- * get_max - get the max of two vals
- * @a: a
- * @b: b
- * Return: the max
- */
-size_t get_max(size_t a, size_t b)
-{
-	if (b > a)
-		return (b);
-	return (a);
-}
-
-/**
- * h_helper - recursive helper with accumulator
+ * s_helper - recursive helper with accumulator
  * @tree: the tree
- * @acc: the accumulator
- * Return: the maximum height of a tree
+ * Return: the size of a tree
  */
-size_t h_helper(const binary_tree_t *tree, size_t acc)
+size_t s_helper(const binary_tree_t *tree)
 {
-	size_t tmp, a, b;
+	size_t a, b;
 
 	if (tree == NULL)
-		return (acc);
-	tmp = acc + 1;
-	a = h_helper(tree->left, tmp);
-	b = h_helper(tree->right, tmp);
-	return (get_max(a, b));
+		return (0);
+	a = s_helper(tree->left);
+	b = s_helper(tree->right);
+	return (a + b + 1);
 }
