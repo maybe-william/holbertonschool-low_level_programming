@@ -38,6 +38,17 @@ int interpolation_search(int *array, size_t size, int value)
 	if (!array)
 		return (-1);
 
+	if (array[low] == value)
+	{
+		printf("Value checked array[%d] = [%d]\n", low, value);
+		return (low);
+	}
+	if (array[high] == value)
+	{
+		printf("Value checked array[%d] = [%d]\n", high, value);
+		return (high);
+	}
+
 	while (1)
 	{
 		mid = get_mid(array, low, high, value);
