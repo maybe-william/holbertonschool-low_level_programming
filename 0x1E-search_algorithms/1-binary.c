@@ -62,5 +62,7 @@ int bhelp(int *array, size_t size, int value, int acc)
  */
 int binary_search(int *array, size_t size, int value)
 {
+	if (!array)
+		return (-1);
 	return (bhelp(array, size, value, 0));
 }
