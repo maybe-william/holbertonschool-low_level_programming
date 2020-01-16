@@ -8,11 +8,11 @@
  * @value: the sought value
  * Return: the interpolated mid
  */
-int get_mid(int *array, unsigned int low, unsigned int high, int value)
+int get_mid(int *array, int low, int high, int value)
 {
 	double part1;
 	int part2, part3;
-	unsigned int mid;
+	int mid;
 
 	part1 = (double)(high - low);
 	part2 = (array[high] - array[low]);
@@ -31,9 +31,9 @@ int get_mid(int *array, unsigned int low, unsigned int high, int value)
  */
 int interpolation_search(int *array, size_t size, int value)
 {
-	unsigned int low = 0;
-	unsigned int high = size - 1;
-	unsigned int mid;
+	int low = 0;
+	int high = size - 1;
+	int mid;
 
 	if (!array)
 		return (-1);
