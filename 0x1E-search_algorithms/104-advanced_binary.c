@@ -47,7 +47,11 @@ int bhelp2(int *array, size_t size, int value, int acc)
 	else
 		mid = (size / 2);
 	if (array[mid] == value)
+	{
+		if (mid > 0 && array[mid - 1] == value)
+			return (bhelp2(array, mid + 1, value, acc));
 		return (acc + mid);
+	}
 	if (array[mid] > value)
 		return (bhelp2(array, mid, value, acc));
 	return (bhelp2(array + mid + 1, size - mid - 1, value, acc + mid + 1));
@@ -70,7 +74,5 @@ int advanced_binary(int *array, size_t size, int value)
 
 	if (res == -1)
 		return (-1);
-	while (res > 1 && array[res - 1] == value)
-		res--;
 	return (res);
 }
