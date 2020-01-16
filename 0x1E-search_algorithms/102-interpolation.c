@@ -50,12 +50,6 @@ int interpolation_search(int *array, size_t size, int value)
 		printf("= [%d]\n", array[mid]);
 		if (array[mid] == value)
 		{
-			while (mid > 0 && array[mid - 1] == value)
-			{
-				mid--;
-				printf("Value checked array[%d] = [%d]\n",
-					 mid, value);
-			}
 			return (mid);
 		}
 		if (array[mid] < value)
