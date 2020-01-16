@@ -48,7 +48,7 @@ int bhelp2(int *array, size_t size, int value, int acc)
 		mid = (size / 2);
 	if (array[mid] == value)
 	{
-		if (mid > 0 && array[mid - 1] == value)
+		if (mid + acc > 0 && (array - 1)[mid] == value)
 			return (bhelp2(array, mid + 1, value, acc));
 		return (acc + mid);
 	}
