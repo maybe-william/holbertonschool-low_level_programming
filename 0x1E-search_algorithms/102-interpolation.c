@@ -59,9 +59,9 @@ int interpolation_search(int *array, size_t size, int value)
 			return (mid);
 		}
 		if (array[mid] < value)
-			low = mid;
+			low = mid - 1;
 		else
-			high = mid;
+			high = mid + 1;
 	}
 	return (-1);
 }
